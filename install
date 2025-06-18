@@ -1,0 +1,32 @@
+Install Terraform
+
+1. CentOS/RHEL
+
+Install yum-config-manager to manage your repositories.
+$ sudo yum install -y yum-utils
+
+Use yum-config-manager to add the official HashiCorp Linux repository.
+$ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+
+Install Terraform from the new repository.
+$ sudo yum -y install terraform
+
+2. Using Codespaces github
+
+1. Goto your repository in GitHub or a create a new repository.
+2. Click on Code downarrow and then Codespaces tab.
+3. Click on + button to create a new codespace on the main branch.
+4. Once it is ready, click on the search button at the top and type this command:
+   > Add dev container configuration files
+5. Modify your active configuration
+6. Search for terraform and check the arrow next to 'Terraform, tflint, and TFGrunt devcontainers.
+7. Once it is done, type the following command in the search button:
+   > Codespaces: Rebuild Container
+   From the popup, confirm by clicking on the button, 'Rebuild'.
+8. Once it is done, from the terminal shown on the screen, type the following command to verify terraform installation:
+
+@manoj7612 ➜ /workspaces/terraform (main) $ terraform --version
+Terraform v1.12.2
+on linux_amd64
+
+The terraform environment is now ready to use.
