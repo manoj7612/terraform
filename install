@@ -19,11 +19,23 @@ $ sudo yum -y install terraform
 4. Once it is ready, click on the search button at the top and type this command:
    > Add dev container configuration files
 5. Modify your active configuration
-6. Search for terraform and check the arrow next to 'Terraform, tflint, and TFGrunt devcontainers.
-7. Once it is done, type the following command in the search button:
+6. Search for 'terraform' and check the arrow next to 'Terraform, tflint, and TFGrunt devcontainers.
+7. Search for 'aws' and check the arrow next to 'AWS CLI devcontainers'.
+8. Search for 'azure' and check the arrow next to 'Azure CLI devcontainers'. 
+The following file gets created:
+devcontainer.json
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/terraform:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {}
+	}
+}
+9. Once it is done, type the following command in the search button:
    > Codespaces: Rebuild Container
    From the popup, confirm by clicking on the button, 'Rebuild'.
-8. Once it is done, from the terminal shown on the screen, type the following command to verify terraform installation:
+10. Once it is done, from the terminal shown on the screen, type the following command to verify terraform installation:
 
 @manoj7612 ➜ /workspaces/terraform (main) $ terraform --version
 Terraform v1.12.2
