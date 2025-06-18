@@ -1,29 +1,36 @@
-Install Terraform
+**Install Terraform in CentOS/RHEL and create a Codespaces GitHub environment:**
 
-1. CentOS/RHEL
+**CentOS/RHEL:**
 
 Install yum-config-manager to manage your repositories.
-$ sudo yum install -y yum-utils
+
+`$ sudo yum install -y yum-utils`
 
 Use yum-config-manager to add the official HashiCorp Linux repository.
-$ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+
+`$ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo`
 
 Install Terraform from the new repository.
-$ sudo yum -y install terraform
 
-2. Using Codespaces github
+`$ sudo yum -y install terraform`
+
+
+**Using Codespaces GitHub:**
 
 1. Goto your repository in GitHub or a create a new repository.
 2. Click on Code downarrow and then Codespaces tab.
 3. Click on + button to create a new codespace on the main branch.
 4. Once it is ready, click on the search button at the top and type this command:
-   > Add dev container configuration files
-5. Modify your active configuration
-6. Search for 'terraform' and check the arrow next to 'Terraform, tflint, and TFGrunt devcontainers.
-7. Search for 'aws' and check the arrow next to 'AWS CLI devcontainers'.
-8. Search for 'azure' and check the arrow next to 'Azure CLI devcontainers'. 
-The following file gets created:
-devcontainer.json
+   
+   `> Add dev container configuration files`
+   
+6. Modify your active configuration
+7. Search for `terraform` and check the arrow next to `Terraform, tflint, and TFGrunt devcontainers`.
+8. Search for `aws` and check the arrow next to `AWS CLI devcontainers`.
+9. Search for `azure` and check the arrow next to `Azure CLI devcontainers`.
+   The following file gets created: `devcontainer.json`
+
+```json
 {
 	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"features": {
@@ -32,11 +39,17 @@ devcontainer.json
 		"ghcr.io/devcontainers/features/azure-cli:1": {}
 	}
 }
-9. Once it is done, type the following command in the search button:
-   > Codespaces: Rebuild Container
-   From the popup, confirm by clicking on the button, 'Rebuild'.
-10. Once it is done, from the terminal shown on the screen, type the following command to verify terraform installation:
+```
 
+11. Once it is done, type the following command in the search button:
+    
+   `> Codespaces: Rebuild Container`
+   
+   From the popup, confirm by clicking on the button, `Rebuild`.
+   
+11. Once it is done, from the terminal shown on the screen, type the following command to verify terraform installation:
+    
+```bash
 a. Verify Terraform:
 @manoj7612 ➜ /workspaces/terraform (main) $ terraform --version
 Terraform v1.12.2
@@ -68,5 +81,6 @@ Legal docs and information: aka.ms/AzureCliLegal
 
 You have 2 update(s) available. Consider updating your CLI installation with 'az upgrade'
 @manoj7612 ➜ /workspaces/terraform (main) $ 
+```
 
 The terraform environment is now ready to use.
