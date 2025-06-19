@@ -51,16 +51,16 @@ Install Terraform from the new repository.
     
 ```bash
 a. Verify Terraform:
-@manoj7612 ➜ /workspaces/terraform (main) $ terraform --version
+@<REDACTED> ➜ /workspaces/terraform (main) $ terraform --version
 Terraform v1.12.2
 on linux_amd64
 
 b. Verify AWS CLI:
-@manoj7612 ➜ /workspaces/terraform (main) $ aws --version
+@<REDACTED> ➜ /workspaces/terraform (main) $ aws --version
 aws-cli/2.27.37 Python/3.13.4 Linux/6.8.0-1027-azure exe/x86_64.ubuntu.20
 
 c. Verify Azure CLI:
-@manoj7612 ➜ /workspaces/terraform (main) $ az --version
+@<REDACTED> ➜ /workspaces/terraform (main) $ az --version
 azure-cli                         2.72.0 *
 
 core                              2.72.0 *
@@ -71,16 +71,14 @@ msal                              1.32.3
 azure-mgmt-resource               23.1.1
 
 Python location '/opt/az/bin/python3'
-Config directory '/home/codespace/.azure'
-Extensions directory '/home/codespace/.azure/cliextensions'
+Config directory '~/.azure'
+Extensions directory '~/.azure/cliextensions'
 
 Python (Linux) 3.12.8 (main, Apr 28 2025, 09:24:09) [GCC 9.4.0]
 
 Legal docs and information: aka.ms/AzureCliLegal
 
-
 You have 2 update(s) available. Consider updating your CLI installation with 'az upgrade'
-@manoj7612 ➜ /workspaces/terraform (main) $ 
 ```
 
 The terraform environment is now ready to use.
