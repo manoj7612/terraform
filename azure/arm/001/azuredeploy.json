@@ -14,36 +14,16 @@
         "description": "SSH public key for authentication."
       }
     },
-    "nsgName": {
-      "type": "string"
-    },
-    "vnetName": {
-      "type": "string"
-    },
-    "subnetName": {
-      "type": "string"
-    },
-    "vnetAddressPrefix": {
-      "type": "string"
-    },
-    "subnetAddressPrefix": {
-      "type": "string"
-    },
-    "storageAccountName": {
-      "type": "string"
-    },
-    "publicIpName": {
-      "type": "string"
-    },
-    "nicName": {
-      "type": "string"
-    },
-    "vmName": {
-      "type": "string"
-    },
-    "vmSize": {
-      "type": "string"
-    }
+    "nsgName": { "type": "string" },
+    "vnetName": { "type": "string" },
+    "subnetName": { "type": "string" },
+    "vnetAddressPrefix": { "type": "string" },
+    "subnetAddressPrefix": { "type": "string" },
+    "storageAccountName": { "type": "string" },
+    "publicIpName": { "type": "string" },
+    "nicName": { "type": "string" },
+    "vmName": { "type": "string" },
+    "vmSize": { "type": "string" }
   },
   "resources": [
     {
@@ -122,9 +102,9 @@
       "name": "[parameters('nicName')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[parameters('vnetName')]",
-        "[parameters('nsgName')]",
-        "[parameters('publicIpName')]"
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIpName'))]"
       ],
       "properties": {
         "ipConfigurations": [
@@ -149,7 +129,7 @@
       "name": "[parameters('vmName')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[parameters('nicName')]"
+        "[resourceId('Microsoft.Network/networkInterfaces', parameters('nicName'))]"
       ],
       "properties": {
         "hardwareProfile": {
