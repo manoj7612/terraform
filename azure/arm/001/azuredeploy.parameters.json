@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "madevuser"
+    },
+    "sshPublicKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC..."  
+    },
+    "nsgName": {
+      "value": "madevnsg01"
+    },
+    "vnetName": {
+      "value": "maVnet01"
+    },
+    "subnetName": {
+      "value": "maSubnet01"
+    },
+    "vnetAddressPrefix": {
+      "value": "10.0.0.0/8"
+    },
+    "subnetAddressPrefix": {
+      "value": "10.1.0.0/16"
+    },
+    "storageAccountName": {
+      "value": "madevstorage01"
+    },
+    "publicIpName": {
+      "value": "madevvm01mPublicIP"
+    },
+    "nicName": {
+      "value": "madevvm01mNIC"
+    },
+    "vmName": {
+      "value": "madevvm01m"
+    },
+    "vmSize": {
+      "value": "Standard_B1s"
+    }
+  }
+}
