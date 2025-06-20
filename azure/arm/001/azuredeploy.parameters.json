@@ -5,9 +5,6 @@
     "adminUsername": {
       "value": "madevuser"
     },
-    "sshPublicKey": {
-      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC..."  
-    },
     "nsgName": {
       "value": "madevnsg01"
     },
