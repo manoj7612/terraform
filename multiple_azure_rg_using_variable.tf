@@ -44,6 +44,21 @@ variable "group_name2" {
   
 }
 
+variable "group_name3" {
+  description = "The name of the resource group"
+  type        = string
+  default     = "RGTest" # Default value for the resource group name
+  validation {
+    condition     = length(var.group_name3) > 0
+    error_message = "The resource group name must not be empty."
+  }
+  validation {
+    condition     = can(regex("^[a-zA-Z0-9_-]+$", var.group_name3))
+    error_message = "The resource group name can only contain alphanumeric characters, underscores, and hyphens."
+  }
+  
+}
+
 variable "location" {
   description = "The Azure region where the resource group will be created"
   type        = string
@@ -63,5 +78,11 @@ resource "azurerm_resource_group" "rg1" {
 resource "azurerm_resource_group" "rg2" {
   name     = var.group_name2
   location = var.location 
+  
+}
+
+resource "azurerm_resource_group" "rg3" {
+  name     = var.group_name3
+  location = var.location
   
 }
